@@ -15,7 +15,9 @@ import { RestProvider } from '../../providers/rest/rest';
   templateUrl: 'adduser.html',
 })
 export class AdduserPage {
-  public user = {};
+  public name;
+  public email;
+  public phone;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -23,18 +25,21 @@ export class AdduserPage {
   }
 
   postUser() {
-    this.rest.addUser(this.user)
+    const user = {
+      name: this.name,
+      email: this.email,
+      phone: this.phone
+    }
+    this.rest.addUser(user)
     .then(res => {
       console.log(res);
     }, err => {
       console.log(err);
     })
     .then(() => {
-      this.user = {
-        name: '',
-        email: '',
-        phone: ''
-      };
+      this.name = '';
+      this.email = '';
+      this.phone = '';
     });
   }
 

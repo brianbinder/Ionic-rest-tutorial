@@ -11,15 +11,15 @@
   <form (ngSubmit)="postUser()">
     <ion-item>
       <ion-label>Name</ion-label>
-      <ion-input type="text" [(ngModel)]="user.name" name="name"></ion-input>
+      <ion-input type="text" [(ngModel)]="name" name="name"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Email</ion-label>
-      <ion-input type="email" [(ngModel)]="user.email" name="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Phone</ion-label>
-      <ion-input type="text" [(ngModel)]="user.phone" name="phone"></ion-input>
+      <ion-input type="text" [(ngModel)]="phone" name="phone"></ion-input>
     </ion-item>
     <button ion-button type="submit" block>Add User</button>
   </form>
